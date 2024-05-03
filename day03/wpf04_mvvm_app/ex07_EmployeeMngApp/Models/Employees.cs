@@ -1,9 +1,9 @@
 ﻿namespace ex07_EmployeeMngApp.Models
 {
-    class Employees
+    public class Employees
     {
         public int Id { get; set; }
-        public int EmpName { get; set; }
+        public string EmpName { get; set; }
         public decimal Salary { get; set; }
         public string DeptName { get; set; }
         public string Addr { get; set; }
