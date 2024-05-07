@@ -103,5 +103,29 @@ IoT 개발자 WPF 학습리포지토리
             - 모든 속성에 NotifyOfPropertyChange() 메서드 존재(★값 변경 알림)
     
 
-
     ![실행화면](https://raw.githubusercontent.com/guswlrla/basic-wpf-2024/main/images/wpf002.png)
+
+## 5일차
+- MahApps.Metro
+    - Metro(Modern UI) 디자인 접목
+
+    ![실행화면](https://raw.githubusercontent.com/guswlrla/basic-wpf-2024/main/images/wpf003.png)
+    ![저장화면](https://raw.githubusercontent.com/guswlrla/basic-wpf-2024/main/images/wpf004.png)
+
+- Movie API 연동 앱, MovieFinder2024
+    - DB(SQL Server) 연동
+    - MahApps.Metro
+    - OpenAPI 두가지 사용
+    - MVVM은 시간부족으로 사용x
+    - 좋아하는 영화 즐겨찾기 앱
+    - [TMDB](https://www.themoviedb.org/) OpenAPI 활용
+        - 회원가입 후 API 신청
+    - [YouTube API](https://console.cloud.google.com/) 활용 
+        - 새 프로젝트 생성
+        - API 및 서비스, 라이브러리 선택
+        - YouTube Data API v3 선택, 사용버튼 클릭
+        - 사용자 인증정보 만들기 클릭
+            1. 사용자 데이터 라디오버튼 클릭
+            2. OAuth 동의화면, 기본내용 입력
+            3. 범위는 저장 후 계속
+            4. OAuth Client ID, 앱 유형을 데스트톱앱, 이름 입력 후 만들기 클릭
