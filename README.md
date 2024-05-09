@@ -117,6 +117,7 @@ IoT 개발자 WPF 학습리포지토리
     - DB(SQL Server) 연동
     - MahApps.Metro UI
     - CefSharp WebBrowser 패키지
+    - Newtonsoft.Json 패키지
     - Google.Apis 패키지
     - MVVM은 사용안함
     - OpenAPI 두가지 사용
@@ -144,9 +145,11 @@ IoT 개발자 WPF 학습리포지토리
 
     https://github.com/guswlrla/basic-wpf-2024/assets/158007465/b99e5b63-6d78-4035-a599-3d7abf798709
 
-
 - 데이터포털 API 연동앱 예제
-    - 5/13 개.프
+    - CefSharp 사용시 플랫폼 대상 AnyCPU에서 x64로 변경필수!
+    - MahApps.Metro UI, IconPacks
+    - Newtonsoft.Json 패키지
+    - 
 
 ## 8일차
 - WPF 개인프로젝트 포트폴리오 작업
