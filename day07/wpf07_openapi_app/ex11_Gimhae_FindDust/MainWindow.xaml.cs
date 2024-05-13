@@ -1,16 +1,9 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ex11_Gimhae_FindDust.Models;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -48,7 +41,7 @@ namespace ex11_Gimhae_FindDust
 
                 foreach (DataRow row in dSet.Tables[0].Rows)
                 {
-                    saveDates.Add(Convert.ToString(row["Save_Dates"]));
+                    saveDates.Add(Convert.ToString(row["Save_Date"]));
                 }
 
                 CboReqDate.ItemsSource = saveDates;
@@ -167,7 +160,48 @@ namespace ex11_Gimhae_FindDust
 
         private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (CboReqDate.SelectedValue != null)
+            {
+                using (SqlConnection conn = new SqlConnection(Helpers.Common.CONNSTRING))
+                {
+                    conn.Open();
 
+                    SqlCommand cmd = new SqlCommand(Models.DustSensor.SELECT_QUERY, conn);
+                    cmd.Parameters.AddWithValue("@Timestamp", CboReqDate.SelectedValue.ToString());
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataSet dSet = new DataSet();
+                    adapter.Fill(dSet, "Dustsensor");
+                    var dustSensors = new List<DustSensor>();
+
+                    foreach (DataRow row in dSet.Tables["Dustsensor"].Rows)
+                    {
+                        dustSensors.Add(new DustSensor
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Dev_id = Convert.ToString(row["Dev_id"]),
+                            Name = Convert.ToString(row["Name"]),
+                            Loc = Convert.ToString(row["Loc"]),
+                            Coordx = Convert.ToDouble(row["Coordx"]),
+                            Coordy = Convert.ToDouble(row["Coordy"]),
+                            Ison = Convert.ToBoolean(row["Ison"]),
+                            Pm10_after = Convert.ToInt32(row["Pm10_after"]),
+                            Pm25_after = Convert.ToInt32(row["Pm25_after"]),
+                            State = Convert.ToInt32(row["State"]),
+                            Timestamp = Convert.ToDateTime(row["Timestamp"]),
+                            Company_id = Convert.ToString(row["Company_id"]),
+                            Company_name = Convert.ToString(row["Company_name"])
+                        });
+                    }
+
+                    this.DataContext = dustSensors;
+                    StsResult.Content = $"DB {dustSensors.Count}건 조회완료";
+                }
+            }
+            else
+            {
+                this.DataContext = null;
+                StsResult.Content = $"DB 조회클리어";
+            }
         }
 
         private void GrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)

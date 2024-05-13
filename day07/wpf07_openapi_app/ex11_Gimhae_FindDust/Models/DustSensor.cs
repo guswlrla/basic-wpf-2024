@@ -42,7 +42,7 @@
                                                                     ,@Timestamp
                                                                     ,@Company_id
                                                                     ,@Company_name)";
-        public static readonly string SELETE_QUERY = @"SELECT [Id]
+        public static readonly string SELECT_QUERY = @"SELECT [Id]
                                                          ,[Dev_id]
                                                          ,[Name]
                                                          ,[Loc]
