@@ -155,4 +155,5 @@ IoT 개발자 WPF 학습리포지토리
 - WPF 개인프로젝트 포트폴리오 작업
     - 부산광역시 공공부문 일자리(채용) 정보
 
-        
+        https://github.com/guswlrla/basic-wpf-2024/assets/158007465/ff9d31c9-d394-40fb-af25-095f35f085f7
+
