@@ -148,7 +148,11 @@ IoT 개발자 WPF 학습리포지토리
 - 데이터포털 API 연동앱 예제
     - CefSharp 사용시 플랫폼 대상 AnyCPU에서 x64로 변경필수!
     - MahApps.Metro UI, IconPacks
-    - Newtonsoft.Json 패키지
+    - Newtonsoft.Json
+    - 개인프로젝트 참조소스
 
 ## 8일차
 - WPF 개인프로젝트 포트폴리오 작업
+    - 부산광역시 공공부문 일자리(채용) 정보
+
+        
