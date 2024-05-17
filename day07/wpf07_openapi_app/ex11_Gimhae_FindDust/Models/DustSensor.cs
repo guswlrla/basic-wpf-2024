@@ -56,7 +56,8 @@
                                                          ,[Company_id]
                                                          ,[Company_name]
                                                         FROM [dbo].[Dustsensor]
-                                                       WHERE CONVERT(CHAR(10), GETDATE(), 23) = @Timestamp";
+                                                       WHERE CONVERT(CHAR(10), Timestamp, 23) = @Timestamp";
+
         public static readonly string GETDATE_QUERY = @"SELECT CONVERT(CHAR(10), Timestamp, 23) AS Save_Date
                                                          FROM [dbo].[DustSensor]
                                                          GROUP BY CONVERT(CHAR(10), Timestamp, 23)";
