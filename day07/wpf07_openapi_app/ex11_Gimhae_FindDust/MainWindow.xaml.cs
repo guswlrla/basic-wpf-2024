@@ -123,8 +123,8 @@ namespace ex11_Gimhae_FindDust
                 {
                     conn.Open();
 
-                    var inRes = 0;
-                    foreach (DustSensor item in GrdResult.Items)
+                    var insRes = 0;
+                    foreach (DustSensor item in GrdResult.SelectedItems)
                     {
                         SqlCommand cmd = new SqlCommand(Models.DustSensor.INSERT_QUERY, conn);
                         cmd.Parameters.AddWithValue("@Dev_id", item.Dev_id);
@@ -140,13 +140,13 @@ namespace ex11_Gimhae_FindDust
                         cmd.Parameters.AddWithValue("@Company_id", item.Company_id);
                         cmd.Parameters.AddWithValue("@Company_name", item.Company_name);
 
-                        inRes += cmd.ExecuteNonQuery();
+                        insRes += cmd.ExecuteNonQuery();
                     }
 
-                    if (inRes > 0)
+                    if (insRes > 0)
                     {
                         await this.ShowMessageAsync("저장", "DB저장성공!");
-                        StsResult.Content = $"DB저장 {inRes}건 성공!";
+                        StsResult.Content = $"DB저장 {insRes}건 성공!";
                     }
                 }
             }
@@ -158,6 +158,7 @@ namespace ex11_Gimhae_FindDust
             InitComboDateFromDB();
         }
 
+        // 수업이후 내용
         private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (CboReqDate.SelectedValue != null)

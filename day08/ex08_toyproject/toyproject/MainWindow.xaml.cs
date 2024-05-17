@@ -9,7 +9,6 @@ using Microsoft.Data.SqlClient;
 using Newtonsoft.Json.Linq;
 using toyproject.Model;
 
-
 namespace toyproject
 {
     /// <summary>
@@ -24,7 +23,6 @@ namespace toyproject
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            BtnRefresh_Click(sender, e);
             InitComboDataFromDB();
         }
 
@@ -122,8 +120,8 @@ namespace toyproject
                 {
                     conn.Open();
 
-                    var inRes = 0;
-                    foreach (JobInformation item in GrdResult.Items)
+                    var insRes = 0;
+                    foreach (JobInformation item in GrdResult.SelectedItems)
                     {
                         SqlCommand cmd = new SqlCommand(Model.JobInformation.INSERT_QUERY, conn);
                         cmd.Parameters.AddWithValue("@Title", item.Title);
@@ -142,13 +140,13 @@ namespace toyproject
                         cmd.Parameters.AddWithValue("@RegDate", item.RegDate);
                         cmd.Parameters.AddWithValue("@ModDate", item.ModDate);
 
-                        inRes += cmd.ExecuteNonQuery();
+                        insRes += cmd.ExecuteNonQuery();
                     }
 
-                    if (inRes > 0)
+                    if (insRes > 0)
                     {
                         await this.ShowMessageAsync("저장", "DB저장성공!");
-                        StsResult.Content = $"DB저장 {inRes}건 성공!";
+                        StsResult.Content = $"DB저장 {insRes}건 성공!";
                     }
                 }
             }
