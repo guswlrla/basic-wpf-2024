@@ -151,6 +151,8 @@ IoT 개발자 WPF 학습리포지토리
     - Newtonsoft.Json
     - 개인프로젝트 참조소스
 
+        https://github.com/guswlrla/basic-wpf-2024/assets/158007465/428f324f-567d-4893-8211-5c35d33ab1fc
+
 ## 8일차
 - WPF 개인프로젝트 포트폴리오 작업
     - 부산광역시 공공부문 일자리(채용) 정보
