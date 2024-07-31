@@ -12,7 +12,8 @@
     Loaded="MetroWindow_Loaded">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
-            <iconPack:PackIconMaterial Kind="Account" Margin="10,7,0,0" Foreground="White" />
+            <!--<iconPack:PackIconMaterial Kind="Account" Margin="10,7,0,0" Foreground="White" />-->
+            <Image Source="/Img/BusanLogo.png" Margin="5,0,0,0"/>
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
     <Grid>

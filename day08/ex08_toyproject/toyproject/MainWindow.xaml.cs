@@ -49,7 +49,7 @@ namespace toyproject
         // 조회버튼
         private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            string openApiUri = "https://apis.data.go.kr/6260000/BusanJobOpnngInfoService/getJobOpnngInfo?serviceKey=nC6FFppZywZlFw%2B2XlRYzqZukBFja5Hd1UCzNjLKF3iMA94%2BF13honnETdW5iO%2Be7aHyL%2B12yma4aKnWhXqm6g%3D%3D&pageNo=1&numOfRows=10&resultType=json";
+            string openApiUri = "https://apis.data.go.kr/6260000/BusanJobOpnngInfoService/getJobOpnngInfo?serviceKey=nC6FFppZywZlFw%2B2XlRYzqZukBFja5Hd1UCzNjLKF3iMA94%2BF13honnETdW5iO%2Be7aHyL%2B12yma4aKnWhXqm6g%3D%3D&pageNo=1&numOfRows=100&resultType=json";
             string result = string.Empty;
 
             WebRequest request = null;

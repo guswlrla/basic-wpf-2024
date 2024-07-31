@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Img\BusanLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CefSharp.Wpf.NETCore" Version="124.3.50" />
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
@@ -19,6 +23,10 @@
 
   <ItemGroup>
     <Folder Include="Sql\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\BusanLogo.png" />
   </ItemGroup>
 
 </Project>
